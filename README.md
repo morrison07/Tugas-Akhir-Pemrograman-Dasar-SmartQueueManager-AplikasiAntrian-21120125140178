@@ -64,4 +64,5 @@ Pastikan sudah menginstal:
 - Library tambahan: *playsound* (untuk audio)
 
 PREVIEW APP
-<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/92feb283-ade7-4f91-81c8-8451fcb797bf" />
+<img width="1919" height="1020" alt="Screenshot 2025-11-30 020806" src="https://github.com/user-attachments/assets/7a4a246a-315e-4ed1-81b4-be3244702fec" />
+
