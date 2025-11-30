@@ -1,69 +1,46 @@
 # Tugas-Akhir-Pemrograman-Dasar-SmartQueueManager-AplikasiAntrian-21120125140178
 
-# Smart-Queue-Aplikasi-Antrian-
-Tugas Akhir Praktikum Pemrograman Dasar Semester 1
+# 🎯 Smart Queue Manager
 
-# 🎯 Smart Queue Manager  
-Aplikasi Manajemen Antrian Pintar Berbasis Python & Tkinter  
+Aplikasi manajemen antrian berbasis Python & Tkinter yang modern, praktis, dan mudah digunakan. Program ini memanfaatkan **Queue** untuk antrian dan **Stack** untuk history panggilan, lengkap dengan sistem undo dan reset nomor antrian.
+
 ---
 
 ## 📌 Deskripsi
-**Smart Queue Manager** adalah aplikasi antrian modern berbasis GUI (Tkinter) yang dilengkapi dengan sistem **Queue**, **Stack**, serta beragam fitur pintar seperti **dark mode**, **sound notification**, **animasi**, dan **ekspor–impor data**.
+**Smart Queue Manager** memungkinkan pengguna untuk:
+- Menambahkan nama ke antrian dengan nomor otomatis (A001, A002, …)
+- Memanggil antrian sesuai sistem FIFO
+- Menyimpan history panggilan dengan sistem LIFO (stack)
+- Undo panggilan terakhir
+- Reset nomor antrian tanpa menghapus antrian yang ada  
 
-Program ini dibuat sebagai Tugas Akhir Praktikum Pemrograman Dasar 2025, dengan pemanfaatan minimal 6 modul praktikum (termasuk GUI Programming).
-
-Aplikasi dapat digunakan untuk:
-- Tempat fotokopi  
-- Ruang pelayanan mahasiswa
-- Rumah Sakit  
-- Apotek kecil  
-- Kantin  
-- Kasir sederhana  
-- Dan berbagai kebutuhan antrian lainnya  
+Program ini dibuat sebagai Tugas Akhir Praktikum Pemrograman Dasar 2025, dan menggunakan modul 1–8 (Variabel, Percabangan, Loop, Fungsi & Method, Struktur Data, Array/List, OOP, GUI Programming).
 
 ---
 
 ## ✨ Fitur Utama
-### 🔹 1. Sistem Antrian Pintar (Queue)
-- Menambahkan antrian dengan nama
-- Memanggil antrian berdasarkan struktur FIFO
-- Format nomor antrian **A001, A002, A003, ...**
-
-### 🔹 2. History (Stack)
-- Menyimpan semua data antrian yang sudah dipanggil
-- Tombol **Undo** untuk mengembalikan antrian terakhir yang dipanggil
-
-### 🔹 3. Mode Gelap (Dark Mode)
-- Mengubah tampilan program menjadi tema gelap modern
-
-### 🔹 4. Export & Import Data (CSV / TXT)
-- Export daftar antrian → **queue_data.csv / txt**
-- Import kembali data antrian dari file eksternal
-
-### 🔹 5. Sound Notification
-Saat memanggil antrian:
-> “Nomor A001, silakan!”
-
-### 🔹 6. Animasi GUI
-- Efek fade-in  
-- Efek tombol interaktif  
-
-### 🔹 7. Tampilan Modern
-- Warna pastel & dark mode
-- Font modern
-- Tombol rounded style
+- Menambahkan nama ke antrian
+- Memanggil antrian dengan format **A001, A002, …**
+- Undo panggilan terakhir
+- Reset nomor antrian
+- Menampilkan daftar antrian dan total antrian
 
 ---
 
-## ▶ Cara Menjalankan Program
+## 🛠️ Teknologi yang Digunakan
+- **Bahasa Pemrograman:** Python 3  
+- **GUI:** Tkinter  
+- **Struktur Data:** Queue & Stack (custom class)  
+- **Paradigma:** OOP (Object Oriented Programming)  
 
-### 🔧 1. Persyaratan
-Pastikan sudah menginstal:
-- Python **3.8+**
-- Library bawaan Python (Tkinter sudah include)
-- Library tambahan: *playsound* (untuk audio)
+---
 
-PREVIEW APP
+## 🚀 Cara Menjalankan
+1. Pastikan Python 3 sudah terinstal di komputer.
+2. Download repository ini atau clone:
+   ```bash
+   git clone <repository-url>
+
 <img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/be78a423-b986-46ff-a761-42a2cf54c83a" />
 
 
