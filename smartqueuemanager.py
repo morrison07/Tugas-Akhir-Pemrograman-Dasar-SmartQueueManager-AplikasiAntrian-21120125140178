@@ -1,10 +1,11 @@
 # Aplikasi Antrian / Tugas Akhir Praktikum Pemrograman
 
 import tkinter as tk
-from tkinter import messagebox, simpledialog
+from tkinter import messagebox
+
 
 class Queue:
-    """Queue FIFO"""
+    """FIFO Queue"""
     def __init__(self):
         self.items = []
 
@@ -27,7 +28,7 @@ class Queue:
 
 
 class Stack:
-    """Stack LIFO"""
+    """LIFO Stack"""
     def __init__(self):
         self.items = []
 
@@ -44,7 +45,7 @@ class Stack:
 
     def get_all(self):
         return list(reversed(self.items))  # newest first
-
+        
 
 def format_number(n):
     return f"A{n:03d}"
@@ -53,12 +54,12 @@ def format_number(n):
 class SmartQueueApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Aplikasi Antrian")
+        self.root.title("Smart Queue Manager")
         self.root.geometry("400x500")
 
         # Struktur data
-        self.queue = Queue()
-        self.history = Stack()
+        self.queue = Queue()    # Queue antrian
+        self.history = Stack()  # Stack riwayat panggilan
         self.counter = 1
 
         # ---------- UI ----------
@@ -94,7 +95,7 @@ class SmartQueueApp:
             messagebox.showwarning("Peringatan", "Nama tidak boleh kosong.")
             return
         item = {"number": self.counter, "name": name}
-        self.queue.enqueue(item)
+        self.queue.enqueue(item)  # Tambah ke queue
         self.counter += 1
         self.entry_name.delete(0, tk.END)
         self.update_display()
@@ -103,8 +104,8 @@ class SmartQueueApp:
         if self.queue.is_empty():
             messagebox.showwarning("Kosong", "Tidak ada antrian untuk dipanggil.")
             return
-        item = self.queue.dequeue()
-        self.history.push(item)
+        item = self.queue.dequeue()  # Ambil dari queue
+        self.history.push(item)      # Simpan di stack history
         self.label_current.config(text=f"Antrian Dipanggil: {format_number(item['number'])} - {item['name']}")
         self.update_display()
 
@@ -112,8 +113,8 @@ class SmartQueueApp:
         if self.history.is_empty():
             messagebox.showwarning("Undo Gagal", "Tidak ada panggilan untuk di-undo.")
             return
-        item = self.history.pop()
-        self.queue.enqueue(item)
+        item = self.history.pop()      # Ambil dari stack
+        self.queue.enqueue(item)       # Kembalikan ke queue
         self.update_display()
 
     def reset_number_only(self):
@@ -122,7 +123,7 @@ class SmartQueueApp:
 
     def update_display(self):
         self.listbox_queue.delete(0, tk.END)
-        for item in self.queue.get_all():
+        for item in self.queue.get_all():  # Loop untuk modul 3
             self.listbox_queue.insert(tk.END, f"{format_number(item['number'])} - {item['name']}")
         self.label_total.config(text=f"Total Antrian: {self.queue.size()}")
 
@@ -131,6 +132,8 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = SmartQueueApp(root)
     root.mainloop()
+
+
 
 
 
