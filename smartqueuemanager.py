@@ -1,8 +1,5 @@
-# Aplikasi Antrian / Tugas Akhir Praktikum Pemrograman
-
 import tkinter as tk
 from tkinter import messagebox
-
 
 class Queue:
     """FIFO Queue"""
@@ -26,7 +23,6 @@ class Queue:
     def get_all(self):
         return list(self.items)
 
-
 class Stack:
     """LIFO Stack"""
     def __init__(self):
@@ -45,11 +41,9 @@ class Stack:
 
     def get_all(self):
         return list(reversed(self.items))  # newest first
-        
 
 def format_number(n):
     return f"A{n:03d}"
-
 
 class SmartQueueApp:
     def __init__(self, root):
@@ -86,7 +80,7 @@ class SmartQueueApp:
         self.label_total = tk.Label(root, text="Total Antrian: 0")
         self.label_total.pack(pady=5)
 
-        tk.Button(root, text="Reset Nomor Antrian", command=self.reset_number_only, width=30).pack(pady=10)
+        tk.Button(root, text="Reset Nomor Antrian", command=self.reset_queue_and_number, width=30).pack(pady=10)
 
     # ---------- FUNGSI ----------
     def add_queue(self):
@@ -117,27 +111,22 @@ class SmartQueueApp:
         self.queue.enqueue(item)       # Kembalikan ke queue
         self.update_display()
 
-    def reset_number_only(self):
+    def reset_queue_and_number(self):
+        """Reset seluruh daftar antrian, history, dan nomor tiket"""
+        self.queue = Queue()
+        self.history = Stack()
         self.counter = 1
-        messagebox.showinfo("Reset", "Nomor antrian berhasil di-reset ke A001.")
+        self.label_current.config(text="Antrian Dipanggil: -")
+        self.update_display()
+        messagebox.showinfo("Reset", "Daftar antrian dan nomor tiket berhasil di-reset.")
 
     def update_display(self):
         self.listbox_queue.delete(0, tk.END)
-        for item in self.queue.get_all():  # Loop untuk modul 3
+        for item in self.queue.get_all():  
             self.listbox_queue.insert(tk.END, f"{format_number(item['number'])} - {item['name']}")
         self.label_total.config(text=f"Total Antrian: {self.queue.size()}")
-
 
 if __name__ == "__main__":
     root = tk.Tk()
     app = SmartQueueApp(root)
     root.mainloop()
-
-
-
-
-
-
-
-
-
